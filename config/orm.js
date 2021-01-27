@@ -1,5 +1,5 @@
 // Import MySQL connection.
-const connection = require("../config/connection.js");
+const connection = require("../config/connection");
 
 const orm = {
 
@@ -14,7 +14,19 @@ const orm = {
         });
     },
 
-    insertOne: () => { },
+
+    insertOne: (selTable, newRowData, cb) => {
+        const queryString = "INSERT INTO ?? SET ?";
+        const values = [selTable, newRowData];
+
+        connection.query(queryString, values, (err, result) => {
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
+    },
+
 
     updateOne: (table, updateValues, condition, cb) => {
         const queryString = "UPDATE ?? SET ? WHERE ? LIMIT 1";
