@@ -3,10 +3,10 @@
   
   ![License](https://img.shields.io/badge/License-MIT-informational)
 
-  deployed app: [click here](###placeholder###)
+  deployed app: [click here](https://immense-everglades-88150.herokuapp.com/)
 
   ### Launch page:
-  ![launch page](images/noteTakerLaunch.jpg)
+  ![launch page](public/assets/images/burgerLaunch.jpg)
 
   ## Table of contents
   ​
@@ -14,16 +14,10 @@
   - [Description](#Descriptionn)
   - [Installation](#Installation)
   - [Usage](#Usage)
-  - [Contributing](#Contributing)
   - [Testing](#Testing)
   - [License](#License)
   - [Questions?](#Questions?)
   
-  
-  code snippet:
-  ``` javascript
-  var example;
-  ```
   
   ## Description
   
@@ -31,15 +25,23 @@
   
   ## Installation
   
-  Run ``` npm i``` in the CLI, after downloading all files off of GitHub (repository is at https://github.com/anzelcapparelli/burger). If there are any missing modules after the installation command (possibly due to a missing package.json), run ```npm i express express-handlebars mysql
+  Run ``` npm i``` in the CLI, after downloading all files off of GitHub (repository is at https://github.com/anzelcapparelli/burger). If there are any missing modules after the installation command (possibly due to a missing package.json), run ```npm i express express-handlebars mysql```. Next, the MySQL database needs to be set up, so copy all code from 'db/schema.sql', and run it in MySQL. DO NOT RUN ```DROP DATABASE IF EXISTS burger_db;``` AFTER THE DATABASE SETUP STAGE!!! Will erase ALL data collected in the database. 
   
+  ``` js  
+  connection = mysql.createConnection({
+    host: "localhost",
+    port: 3306,
+    user: "root",
+    password: "password",
+    database: "burger_db",
+  });
+```
+  
+Finally, in the 'config/connection.js' file, change the above connection object to your personal 'host', 'port', 'user', and 'password'. That's it! Now you are ready to run this app.
+
   ## Usage
   
   From the 'burger' directory (the root directory for the app), run ``` node server.js ``` to get the server up and running (unless you have successfully uploaded this app to a server, then disregard this step). Using the browser, go to the link for the site, then you can add new burgers to the 'Queue', or click the 'Devour it!' button to move a burger into the 'Burgers Devoured' list.
-  
-  ## Contributing
-  
-  
   
   ## Testing
   
@@ -47,7 +49,7 @@
   
   ## License
   
-  This project is licensed under the MIT
+  This project is licensed under the MIT licensing.
   
   ## Questions?
   
