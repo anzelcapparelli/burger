@@ -1,13 +1,20 @@
-<li class="text-left">
-	{{id}}
-	{{burger_name}}
+<div class="col">
+	<li class="text-left align-items-center">
+		<span class="background bg-white text-dark">
+			{{id}}.
+			{{burger_name}}
 
-{{#if devoured}}
+		</span>
 
-{{else}}
-	<button class="devour" data-id="{{id}}">
-		Devour it!
-	</button>
-{{/if}}
+		{{#unless devoured}}
 
-</li>
+		<button class="devour btn btn-dark" data-id="{{id}}">
+			Devour it!
+		</button>
+		{{/unless}}
+
+	</li>
+
+</div>
+<div class="col">
+</div>

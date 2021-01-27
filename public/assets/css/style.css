@@ -1,12 +1,49 @@
+body {
+  background-color: rgb(240, 173, 48);
+}
+
+.icon {
+  /* text-align: center; */
+  align-items: center;
+  display: inline-block;
+}
+
 ul {
-    list-style: none;
-    margin:1em;
+  list-style: none;
+  margin: 1em;
+  margin-left: 0;
+  padding: 0;
+  width: 100%;
 }
 
 li {
-margin: 1em 0;
+  margin: 1em 0;
 }
 
-.spacer{
-    height: 100px;
+#burg {
+  min-height: 60px;
+}
+
+button.devour {
+  /* padding: 2px; */
+  /* align-items: right; */
+  margin-left: auto;
+}
+
+.spacer {
+  height: 100px;
+}
+
+.background {
+  display: inline-block;
+
+  width: 60%;
+  padding: 6px;
+
+  margin-right: 20px;
+}
+
+.submitBtn{
+    margin: auto;
+    width: 100%;
 }

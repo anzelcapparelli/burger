@@ -1,53 +1,71 @@
 <div class="spacer"></div>
 
+
+{{!-- ^^^ need to figure how to include again! --}}
+
 <div class="container">
   <div class="row justify-content-md-center">
-    <h1>Eat-Da-Burger!</h1>
+
+    <div class="icon">
+      <i class="fas fa-hamburger fa-10x">
+        <h1 class="text-danger">Eat-Da-Burger!</h1>
+      </i>
+    </div>
+
+
   </div>
 
   <div class="row justify-content-md-center mt-5">
     <div class="col-md-6">
-      <h3>Burger Queue</h3>
-
-      <ul>
-        {{#each burgers}}
-        {{#unless devoured}}
-        {{> burgers/burger-block devoured=false}}
-        {{/unless}}
-        {{/each}}
-      </ul>
-
+      <div class="row">
+        <h3>Burger Queue</h3>
+      </div>
+      <div class="row ml-0">
+        <ul>
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burgers/burger-block devoured=false}}
+          {{/unless}}
+          {{/each}}
+        </ul>
+      </div>
     </div>
 
     <div class="col-md-6">
-      <h3>Burgers Devoured</h3>
+      <div class="row">
+        <h3>Burgers Devoured</h3>
+      </div>
 
-      <ul>
-        {{#each burgers}}
-        {{#if devoured}}
-        {{> burgers/burger-block devoured=true}}
-        {{/if}}
-        {{/each}}
-      </ul>
-
+      <div class="row ml-0">
+        <ul>
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burgers/burger-block devoured=true}}
+          {{/if}}
+          {{/each}}
+        </ul>
+      </div>
     </div>
   </div>
 
-  <div>
-    <div class="row justify-content-center mt-5">
-      <h2>Add Burger</h2>
-    </div>
-    <div class="row justify-content-center mt-3">
-      <form class="create-form">
+</div>
 
-        <div class="form-group">
-          {{!-- <label for="burg">Burger Name:</label> --}}
-          <input type="text" id="burg" name="name">
-        </div>
-
-        <button type="submit">Submit</button>
-      </form>
-    </div>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <h3>Add Burger</h3>
   </div>
+  <div class="row justify-content-center mt-3">
+    <form class="create-form">
 
+      <div class="form-group">
+        {{!-- <label for="burg">Burger Name:</label> --}}
+        <input type="text" id="burg" name="name">
+      </div>
+
+      <div class="">
+        <button type="submit" class="submitBtn btn btn-primary">Submit</button>
+      </div>
+
+    </form>
+  </div>
 </div>
