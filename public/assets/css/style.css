@@ -1,3 +1,12 @@
 ul {
     list-style: none;
+    margin:1em;
+}
+
+li {
+margin: 1em 0;
+}
+
+.spacer{
+    height: 100px;
 }
